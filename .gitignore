@@ -1,1 +1,2 @@
 node_modules/
+data/migrations/00_schema.sql/
