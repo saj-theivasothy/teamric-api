@@ -4,7 +4,7 @@ const bodyparser = require("body-parser");
 const cors = require("cors")
 
 const indexRoutes = require("./routes/index");
-const userRoutes = require("./routes/users");
+const employeeRoutes = require("./routes/employee");
 const surveyRoutes = require("./routes/survey")
 
 const app = express();
@@ -33,9 +33,9 @@ const indexRouter = express.Router();
 indexRoutes(indexRouter, database);
 app.use("/", indexRouter);
 
-const userRouter = express.Router();
-userRoutes(userRouter, database);
-app.use("/user", userRouter);
+const employeeRouter = express.Router();
+employeeRoutes(employeeRouter, database);
+app.use("/employee", employeeRouter);
 
 const surveyRouter = express.Router();
 surveyRoutes(surveyRouter, database);
