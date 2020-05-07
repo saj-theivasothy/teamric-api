@@ -13,24 +13,24 @@ CREATE TABLE employees (
   isAdmin BOOLEAN
 );
 
-CREATE person_assessments (
+CREATE TABLE person_assessments (
   id SERIAL PRIMARY KEY NOT NULL,
   employee_id INTEGER REFERENCES employees(id) NOT NULL,
   survey_id INTEGER NOT NULL UNIQUE,
-  target_employee_id REFERENCES employees(id) NOT NULL
-)
+  target_employee_id INTEGER REFERENCES employees(id) NOT NULL
+);
 
-CREATE virtue_buckets (
+CREATE TABLE virtue_buckets (
   id SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(50) NOT NULL
-)
+);
 
-CREATE virtues (
+CREATE TABLE virtues (
   id SERIAL PRIMARY KEY NOT NULL,
   virtue_bucket_id INTEGER REFERENCES virtue_buckets(id) NOT NULL,
   name VARCHAR(50) NOT NULL UNIQUE,
   description VARCHAR(255)
-)
+);
 
 ALTER SEQUENCE employees_id_seq RESTART WITH 1;
 ALTER SEQUENCE person_assessments_id_seq RESTART WITH 1;
