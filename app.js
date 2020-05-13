@@ -1,14 +1,17 @@
-const express = require("express");
+const app = require("express")();
+const server = require("http").createServer(app);
+const io = require("socket.io")(server);
+
 const cookieSession = require("cookie-session");
 const bodyparser = require("body-parser");
-const cors = require("cors")
+const cors = require("cors");
 
 const indexRoutes = require("./routes/index");
 const employeeRoutes = require("./routes/employee");
-const surveyRoutes = require("./routes/survey")
+const surveyRoutes = require("./routes/survey");
+const virtueRoutes = require("./routes/virtue");
 
-const app = express();
-const port = "8080";
+const PORT = process.env.PORT || 8001;
 
 app.use(
   cookieSession({
@@ -41,5 +44,8 @@ const surveyRouter = express.Router();
 surveyRoutes(surveyRouter, database);
 app.use("/survey", surveyRouter);
 
-app.listen(port, (err) => console.log(err || `listening on port ${port}`));
+const virtueRouter = express.Router();
+virtueRoutes(virtueRouter, database);
+app.use("/virtue", virtueRouter);
 
+server.listen(PORT, (err) => console.log(err || `listening on port ${port}`));
