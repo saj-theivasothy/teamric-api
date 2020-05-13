@@ -8,4 +8,12 @@ const getVirtues = () => {
   return db.query(queryString).then((res) => res.rows);
 };
 
+const getVirtueCategories = () => {
+  const queryString = `
+        SELECT * FROM virtue_buckets;
+    `;
+
+  return db.query(queryString).then((res) => res.rows);
+};
+
 getVirtues();
