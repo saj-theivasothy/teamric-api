@@ -1,10 +1,11 @@
 const { Pool } = require("pg");
 
+// creates a connection with psql database
 const pool = new Pool({
   user: "vagrant",
   password: "123",
   host: "localhost",
-  database: "teamric"
+  database: "teamric",
 });
 
 module.exports = {
