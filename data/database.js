@@ -8,7 +8,7 @@ const getVirtues = () => {
   return db.query(queryString).then((res) => res.rows);
 };
 
-const getVirtueCategories = () => {
+const getVirtueBuckets = () => {
   const queryString = `
         SELECT * FROM virtue_buckets;
     `;
@@ -16,4 +16,4 @@ const getVirtueCategories = () => {
   return db.query(queryString).then((res) => res.rows);
 };
 
-getVirtues();
+module.exports = { getVirtues, getVirtueBuckets };
