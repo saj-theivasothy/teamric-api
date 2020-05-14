@@ -16,4 +16,12 @@ const getVirtueBuckets = () => {
   return db.query(queryString).then((res) => res.rows);
 };
 
+const getEmployees = () => {
+  const queryString = `
+    SELECT * FROM employees;
+  `;
+
+  return db.query(queryString).then((res) => res.rows);
+};
+
 module.exports = { getVirtues, getVirtueBuckets };
