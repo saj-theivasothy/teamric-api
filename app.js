@@ -41,7 +41,7 @@ app.use("/", indexRouter);
 
 const employeeRouter = express.Router();
 employeeRoutes(employeeRouter, database);
-app.use("/employee", employeeRouter);
+app.use("/employees", employeeRouter);
 
 const surveyRouter = express.Router();
 surveyRoutes(surveyRouter, database);
