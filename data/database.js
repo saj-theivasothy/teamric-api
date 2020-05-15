@@ -26,33 +26,33 @@ const getEmployees = () => {
   return db.query(queryString).then((res) => res.rows);
 };
 
-const getTest = () => {
-  db.collection.find().toArray((err, items) => {
-    console.log(items);
-  });
-};
-
 const addSurvey = (data) => {
   MongoClient.connect(url, (err, client) => {
-    const db = client.db("nodetest1");
+    const db = client.db("teamric");
 
-    db.collection("usercollection").insertOne({ ...data });
+    db.collection("surveys").insertOne({ ...data });
 
     client.close();
   });
 };
 
-const data = {
-  employeeId: 3,
-  feedback: [
-    { skillId: 1, rating: 2, description: "blahblah" },
-    { skillId: 3, rating: 4, description: "hello" },
-    { skillId: 4, rating: 5, description: "byebye" },
-    { skillId: 2, rating: 4, description: "newdata" },
-    { skillId: 6, rating: 3, description: "newestdata" },
-    { skillId: 6, rating: 3, description: "newestdata2" },
-  ],
-};
-addSurvey(data);
+const getAllSurveys = () => {
+  return MongoClient.connect(url)
+    .then((client) => {
+      const database = client.db("teamric");
+      const collection = database.collection("surveys");
 
-module.exports = { getVirtues, getVirtueBuckets, getEmployees };
+      return collection.find().toArray();
+    })
+    .then((surveys) => {
+      return surveys;
+    });
+};
+
+module.exports = {
+  getVirtues,
+  getVirtueBuckets,
+  getEmployees,
+  getAllSurveys,
+  addSurvey,
+};

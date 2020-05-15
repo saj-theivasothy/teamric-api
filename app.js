@@ -45,7 +45,7 @@ app.use("/employees", employeeRouter);
 
 const surveyRouter = express.Router();
 surveyRoutes(surveyRouter, database);
-app.use("/survey", surveyRouter);
+app.use("/surveys", surveyRouter);
 
 const virtueRouter = express.Router();
 virtueRoutes(virtueRouter, database);
