@@ -23,7 +23,8 @@ CREATE TABLE person_assessments (
 
 CREATE TABLE virtue_buckets (
   id SERIAL PRIMARY KEY NOT NULL,
-  name VARCHAR(50) NOT NULL
+  name VARCHAR(50) NOT NULL,
+  img VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE virtues (

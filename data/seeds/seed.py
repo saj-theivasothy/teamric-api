@@ -111,11 +111,19 @@ while (i < 50):
 f.write('\n') 
 
 # Seed virtue buckets table
-virtue_buckets = ['Execution', 'Knowledge', 'Courage', 'Humanity', 'Justice', 'Transcendence', 'Temperance']
+virtue_buckets = [
+  {"virtueName": "Execution", "img": "https://raw.githubusercontent.com/icncsx/teamric-client/8ab74201d314b719932d24569488f986d36e2e3b/public/execution.svg"},
+  {"virtueName": "Knowledge", "img": "https://raw.githubusercontent.com/icncsx/teamric-client/8ab74201d314b719932d24569488f986d36e2e3b/public/knowledge.svg"}, 
+  {"virtueName": "Courage", "img": "https://image.flaticon.com/icons/svg/1454/1454657.svg"}, 
+  {"virtueName": "Humanity", "img": "https://raw.githubusercontent.com/icncsx/teamric-client/8ab74201d314b719932d24569488f986d36e2e3b/public/humanity.svg"}, 
+  {"virtueName": "Justice", "img": "https://raw.githubusercontent.com/icncsx/teamric-client/8ab74201d314b719932d24569488f986d36e2e3b/public/justice.svg"}, 
+  {"virtueName": "Transcendence", "img": "https://raw.githubusercontent.com/icncsx/teamric-client/8ab74201d314b719932d24569488f986d36e2e3b/public/transcendence.svg"}, 
+  {"virtueName": "Temperance", "img": "https://raw.githubusercontent.com/icncsx/teamric-client/8ab74201d314b719932d24569488f986d36e2e3b/public/temperance.svg"}
+]
 
 for x in virtue_buckets:
-  insert_virtue_bucket = 'INSERT INTO virtue_buckets (name) VALUES '
-  insert_virtue_bucket += "('{}');\n".format(x)
+  insert_virtue_bucket = 'INSERT INTO virtue_buckets (name, img) VALUES '
+  insert_virtue_bucket += "('{}', '{}');\n".format(x["virtueName"], x["img"])
   f.write(insert_virtue_bucket)
 
 f.write('\n')
