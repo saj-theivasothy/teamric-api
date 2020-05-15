@@ -27,13 +27,16 @@ const getEmployees = () => {
 };
 
 const addSurvey = (data) => {
-  MongoClient.connect(url, (err, client) => {
-    const db = client.db("teamric");
+  return MongoClient.connect(url)
+  .then((client) => {
+    const database = client.db("teamric");
 
-    db.collection("surveys").insertOne({ ...data });
-
+    return database.collection("surveys").insertOne({ ...data });
     client.close();
-  });
+  })
+  .then((res) => {
+    return res;
+  })
 };
 
 const getAllSurveys = () => {
@@ -43,9 +46,9 @@ const getAllSurveys = () => {
       const collection = database.collection("surveys");
 
       return collection.find().toArray();
+      client.close();
     })
     .then((surveys) => {
-      client.close();
       return surveys;
     });
 };

@@ -2,15 +2,17 @@ module.exports = function (router, database) {
   router.get("/", (req, res) => {
     database
       .getAllSurveys()
-      .then((surveys) => res.send(surveys))
-      .catch((err) => res.Error(err));
+      .then((surveys) => {
+        res.send(surveys)})
+      .catch((err) => {
+        res.send(err)});
   });
 
   router.post("/", (req, res) => {
     database
-      .addSurvey(req.data)
+      .addSurvey(req.body.data)
       .then((response) => res.send(response))
-      .catch((err) => res.Error(err));
+      .catch((err) => res.send(err));
   });
 
   return router;
