@@ -48,9 +48,45 @@ while (i < 100):
 
   isAdmin = 'false'
 
+  # employee's avatar
+  avatars = [
+    "https://i.imgur.com/LpaY82x.png", 
+    "https://i.imgur.com/Nmx0Qxo.png", 
+    "https://i.imgur.com/T2WwVfS.png", 
+    "https://i.imgur.com/FK8V841.jpg", 
+    "https://i.imgur.com/twYrpay.jpg", 
+    "http://icons.iconarchive.com/icons/dapino/people/48/black-man-icon.png", 
+    "http://icons.iconarchive.com/icons/dapino/office-men/48/Man-Black-icon.png", 
+    "http://icons.iconarchive.com/icons/dapino/office-men/48/Man-Grey-icon.png", 
+    "http://icons.iconarchive.com/icons/dapino/office-men/48/Man-Grey-icon.png", 
+    "http://icons.iconarchive.com/icons/dapino/people/48/grey-woman-icon.png", 
+    "http://icons.iconarchive.com/icons/designbolts/free-male-avatars/48/Male-Avatar-Emo-Haircut-icon.png", 
+    "http://icons.iconarchive.com/icons/designbolts/free-male-avatars/48/Male-Avatar-Bow-Tie-icon.png", 
+    "http://icons.iconarchive.com/icons/designbolts/free-male-avatars/48/Male-Avatar-Goatee-Beard-icon.png", 
+    "http://icons.iconarchive.com/icons/designbolts/free-male-avatars/48/Male-Avatar-Hair-icon.png", 
+    "http://icons.iconarchive.com/icons/google/noto-emoji-people-profession/48/10233-man-judge-light-skin-tone-icon.png", 
+    "http://icons.iconarchive.com/icons/google/noto-emoji-people-profession/48/10239-man-judge-medium-dark-skin-tone-icon.png", 
+    "http://icons.iconarchive.com/icons/google/noto-emoji-people-profession/48/10303-man-office-worker-light-skin-tone-icon.png", 
+    "http://icons.iconarchive.com/icons/google/noto-emoji-people-profession/48/10309-woman-office-worker-light-skin-tone-icon.png", 
+    "http://icons.iconarchive.com/icons/dapino/office-women/48/eyes-office-women-glasses-icon.png", 
+    "http://icons.iconarchive.com/icons/google/noto-emoji-people-profession/48/10312-woman-office-worker-medium-dark-skin-tone-icon.png", 
+    "http://icons.iconarchive.com/icons/diversity-avatars/avatars/48/barack-obama-icon.png", 
+    "http://icons.iconarchive.com/icons/diversity-avatars/avatars/48/donald-trump-icon.png", 
+    "http://icons.iconarchive.com/icons/diversity-avatars/avatars/48/cristiano-ronaldo-icon.png", 
+    "http://icons.iconarchive.com/icons/diversity-avatars/avatars/48/vladimir-lenin-icon.png", 
+    "http://icons.iconarchive.com/icons/diversity-avatars/avatars/48/girl-in-ballcap-icon.png", 
+    "http://icons.iconarchive.com/icons/diversity-avatars/avatars/48/dave-grohl-icon.png",
+    "http://icons.iconarchive.com/icons/diversity-avatars/avatars/48/malcolm-x-icon.png",
+    "http://icons.iconarchive.com/icons/diversity-avatars/avatars/48/andy-warhol-icon.png",
+    "http://icons.iconarchive.com/icons/dapino/teenage-girl/48/girl-chuckle-icon.png",
+    "http://icons.iconarchive.com/icons/iconshock/trendy-guys/48/andrew-icon.png"
+  ]
+
+  avatar = avatars[randrange(30)]
+
   # employees table SQL statement
-  insert_employee = 'INSERT INTO employees (name, job_title, email, username, password, isAdmin) VALUES '
-  insert_employee += "('{}', '{}', '{}', '{}', {}, '{}');\n".format(name, job, email, username, password, isAdmin)
+  insert_employee = 'INSERT INTO employees (name, avatar, job_title, email, username, password, isAdmin) VALUES '
+  insert_employee += "('{}', '{}', '{}', '{}', '{}', {}, '{}');\n".format(name, avatar, job, email, username, password, isAdmin)
   f.write(insert_employee)
 
   # next employee

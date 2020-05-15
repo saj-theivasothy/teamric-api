@@ -45,6 +45,7 @@ const getAllSurveys = () => {
       return collection.find().toArray();
     })
     .then((surveys) => {
+      client.close();
       return surveys;
     });
 };
