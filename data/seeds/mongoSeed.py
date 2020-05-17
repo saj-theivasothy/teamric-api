@@ -19,7 +19,7 @@ f.write('\n')
 #Seed survey table
 i = 0
 
-while (i < 5000):
+while (i < 1000):
   reviewerId = randrange(1, 100)
   receiverId = randrange(1, 100)
 

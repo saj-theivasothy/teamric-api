@@ -28,15 +28,15 @@ const getEmployees = () => {
 
 const addSurvey = (data) => {
   return MongoClient.connect(url)
-  .then((client) => {
-    const database = client.db("teamric");
+    .then((client) => {
+      const database = client.db("teamric");
 
-    return database.collection("surveys").insertOne({ ...data });
-    client.close();
-  })
-  .then((res) => {
-    return res;
-  })
+      return database.collection("surveys").insertOne({ ...data });
+      client.close();
+    })
+    .then((res) => {
+      return res;
+    });
 };
 
 const getAllSurveys = () => {
