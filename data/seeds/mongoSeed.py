@@ -20,8 +20,8 @@ f.write('\n')
 i = 0
 
 while (i < 1000):
-  reviewerId = randrange(1, 100)
-  receiverId = randrange(1, 100)
+  reviewerId = randrange(1, 101)
+  receiverId = randrange(1, 101)
 
   if reviewerId == receiverId:
     receiverId += 1
