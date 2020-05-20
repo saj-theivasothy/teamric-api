@@ -28,7 +28,7 @@ i = 0
 
 jobs = ['Junior Front-End Developer', 'Senior Front-End Developer', 'Seo Consultant', 'Web Analytics Developer', 'Digital Marketing Manager', 'Social Media Manager', 'Junior Designer', 'Senior Designer', 'Information Architect', 'UX Designer', 'Lead Developer', 'UI Designer', 'Accessibility Specialist', 'Interaction Designer', 'Junior Backend Developer', 'Senior Backend Developer', 'Mobile Developer', 'Junior Full-Stack Developer', 'Senior Full-Stack Developer', 'Social Media Specialist', 'Digital Marketing Specialist', 'Business Systems Analyst', 'Systems Engineer', 'Systems Administrator', 'Systems Manager', 'Database Administrator', 'Database Manager', 'Data Architect']
 
-while (i < 100):
+while (i < 50):
 
   # employees.name
   name = names.get_full_name()
